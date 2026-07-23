@@ -1,0 +1,9 @@
+{
+  "name": "nothing-tools-text2img",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Nothing Tools — Text to Image, calling the AI image API directly from the client.",
+  "engines": {
+    "node": ">=18"
+  }
+}
