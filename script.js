@@ -1,5 +1,5 @@
 (function(){"use strict";
-var _u="",_g=false;var _p="/api/text2img";
+var _u="",_g=false;var _d="https://api-faa.my.id/faa/ai-text2img-pro";
 function _q(id){return document.getElementById(id);}
 function _t(m){var x=_q("toast"),y=_q("toastMsg");y.textContent=m;x.classList.add("show");clearTimeout(x._h);x._h=setTimeout(function(){x.classList.remove("show");},2800);}
 function _st(){_q("mainContent").scrollTop=0;}
@@ -15,7 +15,7 @@ if(!v){_t("\u26a0\ufe0f Write a prompt first");pr.focus();return;}
 _g=true;btn.classList.add("loading");rc.classList.add("show");dw.innerHTML="";
 pv.innerHTML='<div class="brewing"><div class="brew-noise"></div><p class="brew-text">RENDERING PIXELS<span class="blink-cursor">\u258d</span></p></div>';
 try{
-var r=await fetch(_p+"?prompt="+encodeURIComponent(v));
+var r=await fetch(_d+"?prompt="+encodeURIComponent(v));
 if(!r.ok)throw new Error("HTTP "+r.status);
 var bl=await r.blob();
 _u=URL.createObjectURL(bl);
@@ -34,6 +34,15 @@ _q("generateBtn").addEventListener("click",_gen);
 _q("btnInfo").addEventListener("click",_om);
 _q("modalCloseBtn").addEventListener("click",_cm);
 _q("scrollTopBtn").addEventListener("click",_st);
+_q("lightboxCloseBtn").addEventListener("click",_cf);
+_q("modalOverlay").addEventListener("click",function(e){if(e.target===this)_cm();});
+_q("lightbox").addEventListener("click",function(e){if(e.target===this)_cf();});
+_q("imgPrompt").addEventListener("keydown",function(e){if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();_gen();}});
+_q("previewContainer").addEventListener("click",function(e){var b=e.target.closest('[data-act="eye"]');if(b)_of();});
+_q("downloadWrapper").addEventListener("click",function(e){var b=e.target.closest('[data-act="dl"]');if(b)_dl();});
+document.querySelectorAll(".chip").forEach(function(c){c.addEventListener("click",function(){var pr=_q("imgPrompt");pr.value=c.textContent.trim().replace(/^\S+\s/,"");pr.focus();});});
+});
+})();
 _q("lightboxCloseBtn").addEventListener("click",_cf);
 _q("modalOverlay").addEventListener("click",function(e){if(e.target===this)_cm();});
 _q("lightbox").addEventListener("click",function(e){if(e.target===this)_cf();});
