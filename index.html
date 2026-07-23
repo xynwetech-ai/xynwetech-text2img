@@ -1,0 +1,100 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Nothing — Text to Image</title>
+<link rel="icon" type="image/jpg" href="https://files.catbox.moe/eoyme6.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-wrapper">
+<header class="header">
+<div class="header-left">
+<div class="logo-mark">N<span class="blink-cursor">_</span></div>
+<div class="header-title">NOTHING<span>TEXT → IMAGE</span></div>
+</div>
+<div class="header-right">
+<button class="btn-icon" id="btnInfo"><i class="ri-information-line"></i></button>
+</div>
+</header>
+<main class="content" id="mainContent">
+<div class="hero">
+<p class="eyebrow">AI IMAGE SYNTHESIS</p>
+<h1>Type anything.<br>Let AI draw it up.</h1>
+</div>
+<div class="card console-card">
+<div class="console-label">
+<i class="ri-terminal-box-line"></i> PROMPT <span class="blink-cursor">▍</span>
+</div>
+<textarea id="imgPrompt" placeholder="e.g. a crystal dragon floating above a neon city, digital painting style..." rows="4"></textarea>
+<div class="chip-row" id="chipRow">
+<button class="chip" type="button">🐉 crystal dragon in space</button>
+<button class="chip" type="button">🌆 cyberpunk city in the rain</button>
+<button class="chip" type="button">🐱 cute astronaut cat</button>
+<button class="chip" type="button">🍜 ramen in watercolor style</button>
+</div>
+<button class="btn-generate" id="generateBtn">
+<span class="btn-bracket">[</span>
+<span class="btn-text">GENERATE</span>
+<i class="ri-loader-4-line loader"></i>
+<span class="btn-bracket">]</span>
+</button>
+</div>
+<div class="card result-card" id="resultCard">
+<div class="card-header">
+<div class="icon"><i class="ri-image-2-fill"></i></div>
+<h3>Result <small>Tap the eye icon for fullscreen</small></h3>
+</div>
+<div class="preview-container" id="previewContainer">
+<div class="preview-placeholder">
+<i class="ri-sparkling-2-line"></i>
+<p>Write a prompt, then hit Generate</p>
+</div>
+</div>
+<div id="downloadWrapper"></div>
+</div>
+<div class="promo">
+<h4>⚡ Nothing Tools</h4>
+<p>Text-to-Image. Free, fast, no hassle.</p>
+<i class="ri-magic-line"></i>
+</div>
+<div class="footer">
+Made with <i class="ri-heart-fill"></i> by <strong>Nothing</strong>
+</div>
+</main>
+</div>
+<div class="fab">
+<button id="scrollTopBtn"><i class="ri-arrow-up-line"></i></button>
+</div>
+<div class="toast" id="toast">
+<i class="ri-checkbox-circle-fill"></i>
+<span id="toastMsg">Done!</span>
+</div>
+<div class="modal-overlay" id="modalOverlay">
+<div class="modal-sheet">
+<div class="handle"></div>
+<div class="modal-title">ℹ️ About</div>
+<div class="modal-body">
+<i class="ri-magic-line"></i>
+<h4>Nothing Tools</h4>
+<p>
+<strong>Text to Image</strong><br>
+Write a description, AI turns it into an image.<br><br>
+Tap the eye icon on the result for fullscreen, or download it as PNG.<br><br>
+Created by <strong>Nothing</strong>
+</p>
+</div>
+<button class="btn-close-modal" id="modalCloseBtn">Close</button>
+</div>
+</div>
+<div class="lightbox" id="lightbox">
+<button class="lightbox-close" id="lightboxCloseBtn"><i class="ri-close-line"></i></button>
+<img id="lightboxImg" src="" alt="Fullscreen preview">
+</div>
+<script src="script.js" defer></script>
+</body>
+</html>

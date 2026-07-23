@@ -1,0 +1,9 @@
+{
+  "name": "nothing-tools-text2img",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Nothing Tools — Text to Image, with a Vercel serverless proxy that keeps the upstream API endpoint server-side.",
+  "engines": {
+    "node": ">=18"
+  }
+}
